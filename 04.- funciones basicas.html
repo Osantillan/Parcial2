@@ -1,0 +1,163 @@
+<html>
+	<head>
+		<script>
+			var texto = "Hola";
+			var cadena = texto.toLowerCase();
+			console.log(cadena);
+
+			var letra1 = texto.charAt(0);
+			var letra2 = texto.charAt(2);
+
+			console.log(letra1);
+			console.log(letra2);
+
+			var posicion1 = texto.indexOf("a");
+			var posicion2 = texto.indexOf("b");
+			console.log(posicion1);
+			console.log(posicion2);
+
+			var txt = "Hola mundo";
+
+			var porcion1 = txt.substring(2);
+			var porcion2 = txt.substring(5);
+			var porcion3 = txt.substring(7);
+			var porcion4 = txt.substring(-2);
+
+			var porcion5 = txt.substring(1,8);
+			var porcion6 = txt.substring(3,4);
+			var porcion7 = txt.substring(5,0);
+			var porcion8 = txt.substring(0,5);
+
+			console.log(porcion1);
+			console.log(porcion2);
+			console.log(porcion3);
+			console.log(porcion4);
+			console.log(porcion5);
+			console.log(porcion6);
+			console.log(porcion7);
+			console.log(porcion8);
+		</script>
+
+		<script>
+			var texto = "Hola Mundo";
+			var n = texto.length;
+			console.log(n);
+
+			var t1 = "Hola";
+			var t2 = " Mundo";
+			var cadena = t1+t2;
+			console.log(cadena);
+
+			cadena = t1.concat(" Mundo");
+			console.log(cadena);
+
+			var n = 3;
+			cadena = t1+n;
+			console.log(cadena);
+
+			t1="Hola";
+			t2="Mundo";
+			cadena = t1+t2;
+			console.log(cadena);
+
+			cadena = t1+" "+t2;
+			console.log(cadena);
+
+			cadena = t1.toUpperCase();
+			console.log(cadena);
+
+			texto = "Hola Mundo, soy una cadena texto!";
+			var arreglo = texto.split(" ");
+			console.log(arreglo);
+
+			texto = "Hola";
+			arreglo = texto.split("");
+			console.log(arreglo);
+		</script>
+
+		<script>
+			var vocales = ['a','e','i','0','u'];
+			var n  = vocales.length;
+			console.log(n);
+
+			var array = ["Hola","Mundo"];
+			texto1 =array.join("");
+			texto2 =array.join(" ");
+			console.log(texto1);
+			console.log(texto2);
+
+			var array1 =[1,2,3];
+			array2 = array1.concat(4,5,6);
+			array3 = array2.concat(7,8,9);
+			console.log(array1);
+			console.log(array2);
+			console.log(array3);
+
+			array = [1,2,3];
+			array.push(4);
+			console.log(array);
+
+			array.shift();
+			console.log(array);
+
+			array.unshift(0);
+			console.log(array);
+
+			array.reverse();
+			console.log(array);
+		</script>
+
+		<script>
+			var n1 = 0;
+			var n2 = 0;
+
+			console.log(n1/n2); //muestra el valor NaN
+
+			if (isNaN(n1/n2))
+			{
+				console.log('la division no esta definida para los numeros indicados');
+			}
+			else
+			{
+				console.log('La division es igual  a '+ n1/n2);
+			}
+
+			n1 = 10;
+
+			console.log(n1/n2); //muestra la variable infinity
+
+			var n = 4564.34567;
+
+			n1 = n.toFixed(2);
+			n2 = n.toFixed(6);
+			n3 = n.toFixed();
+			console.log(n1);
+			console.log(n2);
+			console.log(n3);
+		</script>
+
+		<script>
+			function verArreglo(){
+				n=Array();
+				y=prompt("proporcione nombre:","Anitalavalatina");
+				alreves="";
+				for(x=y.length-1;x>=0;x--){
+					alreves+=y[x];
+				}
+				alert(alreves);
+				if(y.toLowerCase()==alreves.toLowerCase()){
+					alert("es palindrome");
+				} else {
+					alert("no es palindrome");
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<button onclick="verArreglo()">Nombre al reves</button>
+	</body>
+</html>
+
+<!-- 
+Hacer una funcion que nos regrese un nombre en orden inverso
+ -->

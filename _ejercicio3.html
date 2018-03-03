@@ -1,0 +1,67 @@
+<html>
+	<head>
+		<title>Formulario</title>
+		<style>
+			#opcion
+			{
+
+			}
+		</style>
+		<script>
+			function nombre(e)
+			{
+				var key = window.Event ? e.which : e.keyCode;
+				return (key >= 97 && key <= 122 || key>= 62 && key <=90 || key ==32);
+			}
+			function telefono(e)
+			{
+				var key = window.Event ? e.which : e.keyCode;
+				return (key >= 48 && key <= 57 || key == 45 || key >=40 && key <=41 );
+			}
+
+			function fecha(e)
+			{
+				var key = window.Event ? e.which : e.keyCode;
+				return (key >= 48 && key <= 57 || key == 47);
+			}
+			function altura(e)
+			{
+				var key = window.Event ? e.which : e.keyCode;
+				return (key >= 48 && key <= 57 || key == 46);
+			}
+		</script>
+	</head>
+	<body>
+		<div id="opcion">
+			<label>Nombre</label>
+			<input type="text" onkeypress="return nombre(event);">
+			<br>
+			<label >Telefono</label>
+			<input type="text" onkeypress="return telefono(event);">
+			<br>
+			<label>Fecha de nacimiento</label>
+			<input type="text" onkeypress="return fecha(event);">
+			<br>
+			<label>Altura</label>
+			<input type="text" maxlength="3" onkeypress="return altura(event);">
+		</div>
+	</body>
+</html>
+
+<!-- 
+Formulario
+nombre solo letras y espacios
+telefono numeros parentesis y guión
+fecha de nacimiento diagonal
+altura solamente un punto decimal numerico 
+
+
+entrar a google api console y crear unacuenta
+
+habilitar google maps javascript
+ir a crear credenciales y crear credencial
+
+investigar
+como utilizar canvas
+que es como funciona etc...
+ -->

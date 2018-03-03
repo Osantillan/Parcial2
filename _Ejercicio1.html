@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<style>
+			#AREA
+			{
+				width: 255px; 
+				height: 255px; 
+				border: 2px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<script>
+			function obtenerPosicion(e)
+			{ 
+				x= e.clientX; 
+				y= e.clientY; 
+				
+				posicionX=parseInt(x,10).toString(16).toUpperCase(); //El numero de posicion X se convierte a cadena en hexadecimal
+				pocisionY=parseInt(y,10).toString(16).toUpperCase(); //El numero de posicion X se convierte a cadena en hexadecimal
+				cursor= "El cursor del mouse esta: "+x+"px"+"-"+y+"px"; 
+				hexa = " Color creado: #"+posicionX+pocisionY; 
+
+				document.getElementById("displayArea").innerHTML=cursor; //Muestra la posicion del cursor
+				document.getElementById("cadena").innerHTML=hexa; //Muestra la cadena de color
+
+				var div = document.getElementById("AREA"); 
+				div.style.background="#"+posicionX+pocisionY; //crea el color referente a los numeros creados al mover el mouse
+			} 
+
+			function detener()
+			{
+				document.getElementById("displayArea").innerHTML=""; //al salir del area de texto deja de tomar los valores de los coores
+			}
+		</script>
+
+		<body>
+		<div id="AREA" onmousemove="obtenerPosicion(event);" onmouseout="detener();">
+			<p>Mueve el cursor encima del texto</p>
+			<p id="displayArea"></p>
+			<p id="cadena"></p>
+		</div>
+		
+	</body>
+	</body>
+</html>

@@ -1,0 +1,44 @@
+<html>
+<head>
+	<title>Ejemplo onChange</title>
+	<script>
+		function cambiarColor(id)
+		{
+			var color = document.getElementById(id).value;
+			var form = document.getElementById("form1");
+			form.style.backgroundColor = color;
+		}
+	</script>
+	<style>
+			.campo
+			{
+				border: 1px solid #FFF;
+				padding: 5px 10px;
+				-o-transition:color .2s ease-out, background 1s is ease-in;
+				-ms-transition:color .2s ease-out, background 1s is ease-in;
+				-moz-transition:color .2s ease-out, background 1s is ease-in;
+				-webkit-transition:color .2s ease-out, background 1s is ease-in;
+				/*Ahora anulamos con la regla propia de CSS*/
+				transition: color .2s ease-out, background 1s ease-in;
+			}
+			.effect
+			{
+				color: red; background: yellow; border-color: cadetblue; border-style: dashed;
+			}
+			.effect label
+			{
+				font-weight: bold;
+			}
+	</style>
+</head>
+<body>
+	<form name="form1" class="campo" id="form1">
+		<select onchange="cambiarColor(this.id);" id="tipoEnvio" name="envio">
+			<option value="#FFFFFF" selected>Color predeterminado</option>
+			<option value="#193A33">Color 1</option>
+			<option value="#612F7F">Color 2</option>
+			<option value="#61AF7F">Color 3</option>
+		</select>
+	</form>
+</body>
+</html>

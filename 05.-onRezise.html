@@ -1,0 +1,16 @@
+<html lang="es">
+<body onresize="pantalla()">
+
+<p id="texto"></p>
+
+<script>
+function pantalla() {
+    var ancho = window.outerWidth;
+    var alto = window.outerHeight;
+    var texto = "Tamaño de la ventana: | Ancho =" + ancho + " | alto = " + alto+" |";
+    document.getElementById("texto").innerHTML = texto;
+}
+</script>
+
+</body>
+</html>

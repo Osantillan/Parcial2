@@ -1,0 +1,8 @@
+<bookstore>
+	<book category="history">
+		<title lang="english">Every day italian</title>
+		<autor>Giada de Laurentis</autor>
+		<year>2005</year>
+		<price>30.</price>
+	</book>
+</bookstore>

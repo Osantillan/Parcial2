@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<title>Ejemplo onPressKey</title>
+		<script>
+			//Solo permite ingresar numeros.
+			function soloNumeros(e)
+			{
+				var key = window.Event ? e.which : e.keyCode;
+				
+				var texto = document.getElementById("txt");
+
+				texto.innerHTML="key: "+event.which;
+
+				return (key >= 48 && key <= 57 || key == 45);
+			}
+		</script>
+	</head>
+	<body>
+		<input type="text" id="txtCosto" name="txtCosto" value="" onkeypress="return soloNumeros(event);">
+		<div id="txt"></div>
+	</body>
+</html>

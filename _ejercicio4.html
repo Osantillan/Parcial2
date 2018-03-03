@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<script>
+			function cargar()
+			{
+				var parrafos = document.getElementsByTagName("p");
+
+				var primerParrafo = parrafos[0];
+
+				for (var i = parrafos.length-1; i >= 0; i--)
+				{
+					var parrafo = parrafos[i];
+					console.log(parrafo);
+				}
+			}
+		</script>
+	</head>
+	<body onload="cargar();">
+		<h1>Acceso directo a los nodos:</h1>
+		<h2>getElementsByTagname</h2>
+
+		<p>De este modo, se puede obtener el primer párrafo de la página de la siguiente manera:</p>
+
+		<p>var primerParrafo = parrafos[0];</p>
+
+		<p>De la misma forma, se podrían recorrer todos los párrafos de la página con el siguiente código:</p>
+
+		<p> for(var i=0; i < parrafos.len i++) { </p>
+
+		<p>var parrafo = parrafos[i];</p>
+
+		<p>}</p>
+	</body>
+</html>
+
+<!-- Hace la conversion de los parrafos con DOM -->

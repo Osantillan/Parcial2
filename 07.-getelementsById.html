@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<script>
+			function show(id)
+			{
+				var alumno = document.getElementById(id.value);
+				alert(alumno.textContent);
+			}
+		</script>
+		<body>
+			<h1>Alumnos</h1>
+
+			<li id="1">Cab Salazar Aldo</li>
+			<li id="2">Dominguez Juares Juan</li>
+			<li id="3">Estrello</li>
+			<li id="4">Eduardo</li>
+			<li id="5">Ulices</li>
+			<li id="6">Pablo</li>
+			<li id="7">Abner</li>
+			<li id="8">Daniel</li>
+			<li id="9">Oscar</li>
+			<li id="10">Mauro</li>
+
+			<select id="num" onchange="show(this)">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+			</select>
+		</body>
+	</head>
+</html>

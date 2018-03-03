@@ -1,0 +1,53 @@
+<html>
+	<head>
+
+		<style>
+			#focusArea
+			{
+				width: 255px;
+				height: 255px;
+				border: 2px solid black;
+			}
+			.barra
+			{
+				width: 255;
+				height: 20;
+				border: 2px solid black;
+				margin: 20px;
+			}
+		</style>
+
+		<script>
+			function obtenerPosicion(e)
+			{
+				x=e.clientX;
+				y=e.clientY;
+
+				x="00"+x.toString(16);// 00FF o 0FF
+				y="00"+y.toString(16);
+				z="00"+z.toString(16);
+
+				x=x[x.length-2]+x[x.length-1];
+				y=y[y.length-2]+y[y.length-1];
+
+				pintar = document.getElementById("focusArea");
+				pintar.style.backgroundColor="#"+x+y+"FF";
+
+			}
+			function detener()
+			{
+				document.getElementById("displayArea").innerHTML="";
+			}
+		</script>
+	</head>
+	<body>
+		<div>
+			<div id="focusArea"><p></p></div>
+			<br>
+			<div id="R" class="barra" onmousemove="obtenerPosicion(event)" onmouseout="detener()" style="background-color: red;">R</div>
+			<div id="G" class="barra" onmousemove="obtenerPosicion(event)" onmouseout="detener()" style="background-color: green;">G</div>
+			<div id="B" class="barra" onmousemove="obtenerPosicion(event)" onmouseout="detener()" style="background-color: blue;">B</div>
+		</div>
+	</body>
+</html>
+

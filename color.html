@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<title>Color</title>
+		<style type="text/css">
+			.picker
+			{
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				margin: auto;
+				width: 720px;
+				height: 180px;
+			}
+			#display
+			{
+				width: 100%;
+				height: 100px;
+				background:#730aa2;
+				margin-top: 30px;
+				border: solid #000;
+			}
+			input
+			{
+				display: block;
+				width: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="picker">
+			<div id="display"></div>
+			R<input type="range" min="0" max="255" id="red">
+			G<input type="range" min="0" max="255" id="green">
+			B<input type="range" min="0" max="255" id="blue">
+			<p id="colores" align="center"></p>
+		</div>
+		<script type="text/javascript">
+			var input = document.querySelectorAll("input");
+			for(var i = 0; i < input.length; i++)
+			{
+				input[i].addEventListener("input", function()
+				{
+					var red = document.getElementById("red").value,
+						green = document.getElementById("green").value,
+						blue = document.getElementById("blue").value;
+						var display = document.getElementById("display");
+					display.style.background = "rgb(" + red + ", " + green + ", " + blue + ")";
+					document.getElementById("colores").innerHTML = "rgb(" + red + ", " + green + ", " + blue + ")";
+				});
+
+			}
+		</script>
+	</body>
+</html>

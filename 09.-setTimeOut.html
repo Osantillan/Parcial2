@@ -1,0 +1,21 @@
+<html>
+	<head>
+		
+	</head>
+	<body>
+
+		<button onclick="retardoHola()">Pruebalo</button>
+
+		<script>
+			function retardoHola()
+			{
+				document.getElementById("espera").innerHTML="por favor espere";
+				window.setTimeout("alert('Hola')",10000);
+			}
+		</script>
+
+		<button onclick="clearTimeout(retardoHola())">Detener</button>
+		<p id="espera"></p>
+
+	</body>
+</html>
