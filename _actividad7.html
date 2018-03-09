@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+		<title>actividad7</title>
+		<style type="text/css">
+		#map
+		{
+			height: 100%;
+		}
+		html{height: 100%}
+		body{height: 100%; margin: 0; padding: 0;}
+	</style>
+	</head>
+	<body>
+		<div id="map"></div>
+		<script>
+
+			var marcadores = null;
+			var map = null;
+			function initMap()
+			{
+				map = new google.maps.Map(document.getElementById("map"),{
+					zoom: 4,
+					center: {lat: -33, lng:151}
+				});
+
+				map.addListener('click',function(e)
+				{
+					addMarker(e.latLng);
+				});
+			}
+
+			function addMarker(direccion)
+			{
+				//alert(direccion);
+				//var dir = direccion.split(',');
+				var image = 
+				'http://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+
+				marcadores = new google.maps.Marker({
+					position: direccion,
+					map: map,
+					icon: image,
+					animation: google.maps.Animation.DROP
+				});
+				marcadores.addListener('click',function(e){
+					this.setMap(null);
+				});
+			}
+		</script>
+		<script async defer src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBxv15npPt6LE8gdl0pfWlte-S0zJK3XoM&sensor=false&callback=initMap"></script>
+	</body>
+</html>

@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Frutas</title>
+	<style>
+	body
+	{
+		background-color: black;
+		color: white;
+	}
+		img
+		{
+			width: 200px;
+			height: 200px;
+			border: 2px solid green;
+			border-radius: 30px;
+
+		}
+
+		div div
+		{
+			width: 130px;
+			height: 150px;
+			border-color: #000000;
+			
+		}
+
+		.listado
+		{
+			display: inline-block;
+		}
+
+		.caja 
+		{ 
+			float:left;
+			margin-left:5px; 
+			margin: 50px;
+		}
+	</style>
+	<script>
+		function fresa()
+		{
+			var li = document.createElement("li");
+
+			var imagen = document.createElement("img");
+			imagen.setAttribute("src","img/fresa.png");
+
+			var link = document.createElement("img");
+			link.setAttribute("src","img/eliminar.png");
+			link.setAttribute("style","width:40px;height:40px;");
+			link.setAttribute("onclick","eliminaLista(this);")
+
+			li.appendChild(imagen);
+			li.appendChild(link);
+
+			document.getElementById("lista").appendChild(li);
+		}
+
+		function cereza()
+		{
+			var li = document.createElement("li");
+
+			var imagen = document.createElement("img");
+			imagen.setAttribute("src","img/cereza.png");
+
+			var link = document.createElement("img");
+			link.setAttribute("src","img/eliminar.png");
+			link.setAttribute("style","width:40px;height:40px;");
+			link.setAttribute("onclick","eliminaLista(this);")
+
+			li.appendChild(imagen);
+			li.appendChild(link);
+
+			document.getElementById("lista").appendChild(li);
+		}
+
+		function sandia()
+		{
+			var li = document.createElement("li");
+
+			var imagen = document.createElement("img");
+			imagen.setAttribute("src","img/sandia.png");
+
+			var link = document.createElement("img");
+			link.setAttribute("src","img/eliminar.png");
+			link.setAttribute("style","width:40px;height:40px;");
+			link.setAttribute("onclick","eliminaLista(this);")
+
+			li.appendChild(imagen);
+			li.appendChild(link);
+
+			document.getElementById("lista").appendChild(li);
+		}
+
+		function eliminaLista(obj)
+		{
+			var eliminar = obj.parentNode;
+			eliminar.parentNode.removeChild(eliminar);
+		}
+	</script>
+</head>
+<body>
+	<h1>Carrito de compras</h1>
+	<h2>Agregar</h2>
+	<div class="listado">
+		<div class="caja">
+			<img src="img/fresa.png" alt="" onclick="fresa()">
+			Fresa
+		</div>
+		<div class="caja">
+			<img src="img/cereza.png" alt="" onclick="cereza()">
+			Cereza
+		</div>
+		<div class="caja">
+			<img src="img/sandia.png" alt="" onclick="sandia()">
+			Sandia
+		</div>
+	</div>
+	<ul id="lista">
+	
+	</ul>
+</body>
+</html>
