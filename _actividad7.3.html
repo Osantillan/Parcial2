@@ -1,0 +1,81 @@
+<html>
+	<head>
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+		<title>actividad7</title>
+		<style type="text/css">
+		#map
+		{
+			height: 100%;
+		}
+		html{height: 100%}
+		body{height: 100%; margin: 0; padding: 0;}
+	</style>
+	</head>
+	<body>
+		<div id="map"></div>
+		<script>
+			var sucursal = [{"nombre":"SUV" , "posicion":"20.6579935,-87.8626953"},
+			{"nombre":"SEDAN" , "posicion":"20.642961, -87.090140"}]; 
+
+			var cafeteria = [{"nombre":"Tikal" , "posicion":"20.6579935,-87.8626953"},
+			{"nombre":"Palmar" , "posicion":"20.6544597,-87.8626953"}];
+
+			var marcadores = null;
+			var map = null;
+			function initMap()
+			{
+				map = new google.maps.Map(document.getElementById("map"),{
+					zoom: 12,
+					center: {lat: 20.648155, lng:-87.072944}, 
+				});
+
+				var link1 = document.createElement("a");
+				link1.href="#";
+				link1.textContent="Sucursales";
+				link1.addEventListener("click",function(){
+					for(x=0;x<sucursal.length;x++)
+					{
+						var dir = sucursal[x].posicion.split(',');
+						var latLn = new google.maps.LatLng(dir[0],dir[1]);
+						addMarker(latLn);
+					}
+				});
+
+				var link2 = document.createElement("a");
+				link2.href="#";
+				link2.textContent="Cafeterias";
+				link2.addEventListener("click",function(){
+					for(x=0;x<sucursal.length;x++)
+					{
+						var dir = sucursal[x].posicion.split(',');
+						var latLn = new google.maps.LatLng(dir[0],dir[1]);
+						addMarker(latLn);
+					}
+				});
+				var content = document.getElementById("botones");
+				content.append(link1);
+				content.append(link2);
+			}
+
+			function addMarker(direccion)
+			{
+				//alert(direccion);
+				//var dir = direccion.split(',');
+				var image = 
+				'http://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+
+				marcadores = new google.maps.Marker({
+					position: direccion,
+					map: map,
+					icon: image,
+					animation: google.maps.Animation.DROP
+				});
+				marcadores.addListener('click',function(e){
+					this.setMap(null);
+				});
+			}
+		</script>
+		<script async defer src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBxv15npPt6LE8gdl0pfWlte-S0zJK3XoM&sensor=false&callback=initMap"></script>
+		<div id="botones"></div>
+	</body>
+</html>
