@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio 2</title>
+	<script>
+		function numeros(e)
+		{
+			var key = window.Event ? e.which : e.keyCode;
+			return (key >= 48 && key <= 57);
+		}
+	</script>
+</head>
+<body>
+	<div id="formulario">
+		<h1>Cuadros</h1>
+		<label >Alto: </label><input type="text" id="altoTxt" onkeypress="return numeros(event);"><br><br>
+		<label >Ancho: </label><input type="text" id="anchoTxt" onkeypress="return numeros(event);"><br><br>
+		<label >Color: </label>
+		<select id="">
+			<option id="rojo">Rojo</option>
+			<option id="verde">Verde</option>
+			<option id="azul">Azul</option>
+		</select><br><br>
+		<input type="submit" value="Crear cuadro" onclick="obtener()">
+	</div>
+
+	<script>
+		function obtener()
+		{
+			var li = document.createElement("li");
+
+			var alto = document.getElementById("altoTxt");
+			var ancho = document.getElementById("anchoTxt");
+			var p = document.getElementById("p");
+
+			document.body.appendChild(alto);
+			document.body.appendChild(ancho);
+		}
+		function eliminaLista(obj)
+		{
+			var eliminar = obj.parentNode;
+			eliminar.parentNode.removeChild(eliminar);
+		}
+	</script>
+	
+	<div id="contenedor"></p></div>
+</body>
+</html>
+
+<!--
+Ejercicio 1
+Crear un sistema que permita agregar a una lista alumnos (nombre,edad,calificacion)
+Como agregue o elimine de la lista debe calcular el promedio del grupo y marcar el alumno con el promedio mas alto
+(agregar y eliminar a travez de un formulario)
+
+Ejercicio 2**
+Crear cuadros dinamicos
+el programa debe pedir el alto, ancho y color de un cuadro y agregarlos en un contenedor. Al hacer clic en un cuadro se debe eliminar. Sacar el total de cuadros del contenedor
+(formulario con el alto y ancho del cuadro y darle click al cuadro para que desaparesca)
+
+ejercicio 3
+Crear un sistema que agrege empleados y a travéz de una lista los identifique por color dependiendo el tipo de empleado. Los tipos son: administrador rojo, sistemas azul y ventas verde.
+
+Rúbricas:
+agrega elementos dinamicos 20pts
+agrega los datos a la tabla(en caso de los cubos) 20pts
+aplica efectos de color 20pts
+realiza los calculos 20pts
+ -->

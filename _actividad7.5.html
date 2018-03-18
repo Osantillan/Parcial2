@@ -18,12 +18,16 @@
 <body>
 	<div id="map" style="width: 100%; height: 100%"></div>	
 	<script type="text/javascript">
-		var sucursal= [{
-			"nombre":"SUV", "posicion":"20.679831, -87.059047"},{"nombre":"SEDAM", "posicion":"20.684167, -87.051923"
-		}];
-		var cafeteria= [{
-			"nombre":"Tikal", "posicion":"20.644133, -87.061031"},{"nombre":"Palmar", "posicion":"20.624706, -87.077890"
-		}];
+		var sucursal= 
+		[
+			{"nombre":"SUV", "posicion":"20.679831, -87.059047"},
+			{"nombre":"SEDAM", "posicion":"20.684167, -87.051923"}
+		];
+		var cafeteria=
+		[
+			{"nombre":"Tikal", "posicion":"20.644133, -87.061031"},
+			{"nombre":"Palmar", "posicion":"20.624706, -87.077890"}	
+		];
 		var marcadores = [];
 		var map = null;
 		
@@ -33,11 +37,19 @@
 				center: new google.maps.LatLng(20.679831, -87.059047)
 			});
 
-			/*for (var i = 0; i < sucursal.length; i++) {
-				var dir = sucursal[i].posicion.split(',');
-				var latlng = new google.maps.LatLng(dir[0],dir[1]);
-				addMarker(latlng);
-			}*/
+			map.addListener(click,function(e){
+				var nombre = prompt("Proporcione nombre", "");
+				var tipo = prompt("1.Rest, 2.Gym", "");
+				switch (tipo) 
+				{
+					case 1:
+					{
+						Restaurantes.push({"nombre":nombre,"position":e.latLng.lat()+""+e.latLng.lng()});
+						break;
+					}
+				}
+			});
+
 
 			var link1 = document.createElement("a");
 			link1.href="#";
@@ -101,7 +113,8 @@
 		}
 
 		function eliminar(){
-			for (var i = 0; i < marcadores.length; i++) {
+			for (var i = 0; i < marcadores.length; i++)
+			{
 				marcadores[i].setMap(null);
 			}
 		}
